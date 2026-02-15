@@ -83,7 +83,6 @@ def get_top_regions(con, table, spec, where_sql, params, top_n: int = 10):
     Top régions selon:
     - SUM(amount_col) si disponible
     - sinon COUNT(*)
-    Le nombre de lignes est piloté par top_n (slider).
     """
     if not spec.region_col:
         return None

@@ -46,7 +46,7 @@ def line_month(df):
     return _layout(
         fig,
         "Évolution mensuelle",
-        "Airbnb: prix moyen / mois • Shopping: somme des montants / mois (labels sur min, max, dernier)",
+        "Airbnb: prix moyen / mois • Shopping: somme des montants / mois ",
     )
 
 
@@ -65,7 +65,7 @@ def bar_top(df, x: str, y: str, title: str, subtitle: str | None = None):
 
 def hist_rating(df):
     """
-    Histogramme des notes (rating).
+    Histogramme des notes.
     """
     if df is None or df.empty:
         return None
@@ -73,4 +73,4 @@ def hist_rating(df):
     fig = px.histogram(df, x="rating", nbins=20)
     fig.update_traces(texttemplate="%{y}", textposition="outside", cliponaxis=False)
 
-    return _layout(fig, "Distribution des notes", "Répartition des ratings (après filtres)")
+    return _layout(fig, "Distribution des notes")

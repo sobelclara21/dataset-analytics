@@ -34,7 +34,7 @@ st.markdown(
     """
     <div style="display:flex;align-items:center;justify-content:space-between;">
         <div>
-            <h1 style="margin-bottom:0;">📊 KPI Dashboard</h1>
+            <h1 style="margin-bottom:0;">📊 Dataset-analytics</h1>
             <p style="margin-top:6px;opacity:0.85;">
                  → KPI & Visualisations
             </p>
@@ -70,8 +70,6 @@ st.sidebar.caption("upload +filtres")
 st.sidebar.divider()
 
 uploaded = st.sidebar.file_uploader("📤 Téléverser un CSV", type=["csv"])
-
-st.sidebar.caption("Affichage Top 10")
 
 reset = st.sidebar.button("🔄 Reset filtres", use_container_width=True)
 st.sidebar.divider()
@@ -136,7 +134,7 @@ where_sql, params = build_where(spec, date_range, regions, products)
 n, total, avg, rating = get_summary_kpis(con, TABLE, spec, where_sql, params)
 
 with st.container(border=True):
-    st.subheader("📌 KPIs (après filtres)")
+    st.subheader("📌 KPIs ")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("📦 Lignes", fmt_int(n))
     c2.metric("💰 Total", fmt_money(total))
@@ -183,7 +181,7 @@ with tab4:
     else:
         st.info("Graph indisponible (pas de colonne note).")
 
-with st.expander("🔎 Aperçu des données filtrées (max 200 lignes)"):
+with st.expander("🔎 Aperçu des données (max 200 lignes)"):
     st.dataframe(
         con.execute(f"SELECT * FROM {TABLE}{where_sql} LIMIT 200", params).df(),
         width="stretch"
