@@ -94,7 +94,7 @@ L'application s'ouvre automatiquement dans votre navigateur à `http://localhost
 ### Utilisation
 
 1. **Télécharger un dataset** depuis Kaggle :
-   - [Shopping Trends](https://www.kaggle.com/datasets/zeesolver/consumer-behavior-and-shopping-habits-dataset)
+   - [Shopping Trends](https://www.kaggle.com/datasets/ayeshasiddiqa123/customer-shopping-behavior-dataset)
    - [Airbnb Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)
 
 2. **Dans l'application** :
